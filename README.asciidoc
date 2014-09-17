@@ -1,0 +1,2 @@
+A very simple OSC driven scrolling spectrogram like window.
+(or at least it will be when this is done)
