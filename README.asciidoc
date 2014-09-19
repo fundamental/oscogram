@@ -1,2 +1,26 @@
 A very simple OSC driven scrolling spectrogram like window.
-(or at least it will be when this is done)
+
+Listens on port 4321 for any messages of the form
+/multiplot:f*
+
+All input data is transformed into zero mean and unit variance and then plotted.
+Up to 32 concurrent plots are supported at once.
+
+WARNING:: This is a development/debugging tool with prealpha quality.
+          If you need to plot moderate rate OSC signals in a scrolling plot,
+          this should be hackable for what you want, though don't expect it to
+          be pretty.
+
+Hacking Ideas
+~~~~~~~~~~~~~
+
+- Add in color map support within insertCol()
+- Add grid or fill for multiplot API
+- Get /raw_data api to work which should allow for manual specification of RGB
+  column data
+- Perhaps allow for appending rows rather than cols (simple enough, though it
+  might not be too useful given normal screen dimensions)
+- Allow for startup selection of number of channels and sizing of window.
+- Permit non-compile time switch to use FFT or to use direct data (or better
+  yet, make an external program to do the FFT and then use the /raw_data API)
+
